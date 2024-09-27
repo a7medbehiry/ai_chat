@@ -19,8 +19,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => ChatProvider()),
         ChangeNotifierProvider(create: (context) => SettingsProvider()),
       ],
-      child:
-          const AIChat(),
+      child: const AIChat(),
       //     DevicePreview(
       //   enabled: true,
       //   builder: (context) => const AIChat(),
@@ -37,7 +36,7 @@ class AIChat extends StatefulWidget {
 }
 
 class _AIChatState extends State<AIChat> {
-    @override
+  @override
   void initState() {
     setTheme();
     super.initState();
@@ -51,7 +50,8 @@ class _AIChatState extends State<AIChat> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme:  context.watch<SettingsProvider>().isDarkMode ? darkTheme : lightTheme,
+      theme:
+          context.watch<SettingsProvider>().isDarkMode ? darkTheme : lightTheme,
       debugShowCheckedModeBanner: false,
       // locale: DevicePreview.locale(context),
       // builder: DevicePreview.appBuilder,
