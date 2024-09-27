@@ -36,7 +36,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         ListTile(
           onTap: () async {
             await chatProvider.prepareChatRoom(isNewChat: true, chatID: '');
-            Navigator.pushReplacementNamed(context, ChatView.routeName);
+            Navigator.pushNamed(context, ChatView.routeName);
           },
           leading: isDarkMode
               ? Image.asset('assets/images/home_chat.png')

@@ -52,6 +52,7 @@ class OnBoardingPageView extends StatelessWidget {
       thirdContainerSecondText: 'events after 2021',
     ),
   ];
+  
   static const lightItems = [
     PageViewItemModel(
       firstImage: 'assets/images/logo_dark.png',

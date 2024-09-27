@@ -5,7 +5,6 @@ class Message {
   StringBuffer message;
   DateTime timeSent;
 
-  // constructor
   Message({
     required this.messageId,
     required this.chatId,
@@ -14,7 +13,6 @@ class Message {
     required this.timeSent,
   });
 
-  // toMap
   Map<String, dynamic> toMap() {
     return {
       'messageId': messageId,
@@ -25,7 +23,6 @@ class Message {
     };
   }
 
-  // from map
   factory Message.fromMap(Map<String, dynamic> map) {
     return Message(
       messageId: map['messageId'],
@@ -36,7 +33,6 @@ class Message {
     );
   }
 
-  // copyWith
   Message copyWith({
     String? messageId,
     String? chatId,

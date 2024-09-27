@@ -109,7 +109,6 @@ class _BottomChatFieldState extends State<BottomChatField> {
                 ? null
                 : () {
                     if (textController.text.isNotEmpty) {
-                      // send the message
                       sendChatMessage(
                         message: textController.text,
                         chatProvider: widget.chatProvider,

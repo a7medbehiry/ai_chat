@@ -156,7 +156,7 @@ class ChatProvider extends ChangeNotifier {
   }
 
   String getApiKey() {
-    return 'AIzaSyASuUEJvklucYD0bwHkRM-L5wMQvgaRNAY';
+    return 'AIzaSyDe6S3LlwwIP0ygHrZ7V4n7sJjXvMxwS7k';
   }
 
   // set current page index
@@ -362,11 +362,13 @@ class ChatProvider extends ChangeNotifier {
     });
   }
 
+  // Call sendMessage again
   void regenerateLastResponse() {
     if (_lastUserMessage.isNotEmpty) {
       sentMessage(
-          message: _lastUserMessage,
-          isTextOnly: true); // Call sendMessage again
+        message: _lastUserMessage,
+        isTextOnly: true,
+      ); 
     }
   }
 

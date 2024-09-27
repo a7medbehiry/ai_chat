@@ -29,7 +29,7 @@ class ChatHistoryWidget extends StatelessWidget {
               isNewChat: false,
               chatID: chat.chatId,
             );
-            Navigator.pushReplacementNamed(
+            Navigator.pushNamed(
               context,
               ChatView.routeName,
             );
