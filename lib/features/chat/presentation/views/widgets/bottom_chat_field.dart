@@ -94,7 +94,9 @@ class _BottomChatFieldState extends State<BottomChatField> {
                     },
               controller: textController,
               focusNode: textFieldFocus,
-              style: AppTextStyles.semiBold16,
+              style: isDarkMode
+                  ? AppTextStyles.semiBold16
+                  : AppTextStyles.semiBold16.copyWith(color: Colors.black),
               cursorColor: isDarkMode ? Colors.white : Colors.black,
               decoration: const InputDecoration(
                 border: InputBorder.none,

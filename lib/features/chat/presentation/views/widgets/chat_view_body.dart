@@ -65,16 +65,20 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                       HomeView.routeName,
                     );
                   },
-                  child: isDarkMode
-                      ? Image.asset('assets/images/chat_arrow.png')
-                      : Image.asset('assets/images/chat_arrow_dark.png'),
+                  child: Row(
+                    children: [
+                      isDarkMode
+                          ? Image.asset('assets/images/chat_arrow.png')
+                          : Image.asset('assets/images/chat_arrow_dark.png'),
+                      const SizedBox(width: 16),
+                      isDarkMode
+                          ? const Text('Back', style: AppTextStyles.semiBold16)
+                          : Text('Back',
+                              style: AppTextStyles.semiBold16
+                                  .copyWith(color: Colors.black)),
+                    ],
+                  ),
                 ),
-                const SizedBox(width: 16),
-                isDarkMode
-                    ? const Text('Back', style: AppTextStyles.semiBold16)
-                    : Text('Back',
-                        style: AppTextStyles.semiBold16
-                            .copyWith(color: Colors.black)),
                 const Spacer(),
                 isDarkMode
                     ? Image.asset('assets/images/logo.png')
@@ -84,7 +88,9 @@ class _ChatViewBodyState extends State<ChatViewBody> {
             const SizedBox(height: 20),
             Divider(
               thickness: 1,
-              color: Colors.white.withOpacity(0.40),
+              color: isDarkMode
+                  ? Colors.white.withOpacity(0.40)
+                  : Colors.black.withOpacity(0.40),
               height: 0,
             ),
             Expanded(
@@ -120,7 +126,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                         ? Border.all(
                             color: Colors.white.withOpacity(0.20),
                           )
-                        : Border.all(
+                      : Border.all(
                             color: Colors.black.withOpacity(0.20),
                           ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test/features/chat/presentation/providers/chat_provider.dart';
@@ -20,11 +21,11 @@ void main() async {
         ChangeNotifierProvider(create: (context) => SettingsProvider()),
       ],
       child:
-          const AIChat(),
-      //     DevicePreview(
-      //   enabled: true,
-      //   builder: (context) => const AIChat(),
-      // ),
+          // const AIChat(),
+          DevicePreview(
+        enabled: true,
+        builder: (context) => const AIChat(),
+      ),
     ),
   );
 }
@@ -54,8 +55,8 @@ class _AIChatState extends State<AIChat> {
     return MaterialApp(
       theme:  context.watch<SettingsProvider>().isDarkMode ? darkTheme : lightTheme,
       debugShowCheckedModeBanner: false,
-      // locale: DevicePreview.locale(context),
-      // builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
     );
