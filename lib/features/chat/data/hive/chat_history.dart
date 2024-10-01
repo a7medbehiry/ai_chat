@@ -16,10 +16,14 @@ class ChatHistory extends HiveObject {
   @HiveField(3)
   final DateTime timestamp;
 
+  @HiveField(4)
+  final String firstPrompt;
+
   ChatHistory({
     required this.chatId,
     required this.prompt,
     required this.response,
     required this.timestamp,
+    required this.firstPrompt,
   });
 }

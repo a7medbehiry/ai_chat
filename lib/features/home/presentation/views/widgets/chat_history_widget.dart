@@ -20,7 +20,6 @@ class ChatHistoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = context.watch<SettingsProvider>().isDarkMode;
 
-    
     return Column(
       children: [
         ListTile(
@@ -40,12 +39,12 @@ class ChatHistoryWidget extends StatelessWidget {
               : Image.asset('assets/images/chat_dark.png'),
           title: isDarkMode
               ? Text(
-                  chat.prompt,
+                  chat.firstPrompt,
                   maxLines: 2,
                   style: AppTextStyles.med16,
                 )
               : Text(
-                  chat.prompt,
+                  chat.firstPrompt,
                   maxLines: 2,
                   style: AppTextStyles.med16.copyWith(color: Colors.black),
                 ),

@@ -390,11 +390,14 @@ class ChatProvider extends ChangeNotifier {
     // if not create a new one
     final chatHistoryBox = Boxes.getChatHistory();
 
+    final existingChatHistory = chatHistoryBox.get(chatID);
+
     final chatHistory = ChatHistory(
       chatId: chatID,
       prompt: userMessage.message.toString(),
       response: assistantMessage.message.toString(),
       timestamp: DateTime.now(),
+      firstPrompt: existingChatHistory?.firstPrompt ?? userMessage.message.toString(), 
     );
     await chatHistoryBox.put(chatID, chatHistory);
 

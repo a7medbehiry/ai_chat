@@ -21,13 +21,14 @@ class ChatHistoryAdapter extends TypeAdapter<ChatHistory> {
       prompt: fields[1] as String,
       response: fields[2] as String,
       timestamp: fields[3] as DateTime,
+      firstPrompt: fields[4] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ChatHistory obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.chatId)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class ChatHistoryAdapter extends TypeAdapter<ChatHistory> {
       ..writeByte(2)
       ..write(obj.response)
       ..writeByte(3)
-      ..write(obj.timestamp);
+      ..write(obj.timestamp)
+      ..writeByte(4)
+      ..write(obj.firstPrompt);
   }
 
   @override

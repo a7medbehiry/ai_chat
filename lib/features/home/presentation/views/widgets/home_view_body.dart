@@ -147,7 +147,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   style: AppTextStyles.med16.copyWith(color: Colors.black)),
         ),
         ListTile(
-          onTap: () {},
+          onTap: () async {
+            var chatBox = Boxes.getChatHistory();
+            await chatBox.clear();
+          },
           leading: Image.asset('assets/images/log_out.png'),
           title: Text(
             'Logout',
