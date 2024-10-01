@@ -39,6 +39,15 @@ android {
     }
 }
 
+android {
+
+ packagingOptions {
+ jniLibs {
+ useLegacyPackaging true
+ }
+ }
+}
+
 flutter {
     source = "../.."
 }
