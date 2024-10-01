@@ -20,6 +20,7 @@ class ChatHistoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = context.watch<SettingsProvider>().isDarkMode;
 
+    
     return Column(
       children: [
         ListTile(

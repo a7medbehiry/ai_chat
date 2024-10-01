@@ -52,7 +52,7 @@ class OnBoardingPageView extends StatelessWidget {
       thirdContainerSecondText: 'events after 2021',
     ),
   ];
-  
+
   static const lightItems = [
     PageViewItemModel(
       firstImage: 'assets/images/logo_dark.png',
@@ -101,21 +101,28 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = context.watch<SettingsProvider>().isDarkMode;
 
-    return GestureDetector(
-      onHorizontalDragUpdate: (details) {
-        if (details.delta.dx != 0) {
-          return;
-        }
-      },
-      child: PageView(
-        controller: pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: isDarkMode
-            ? darkItems.map((e) => PageViewItem(pageViewItemModel: e)).toList()
-            : lightItems
-                .map((e) => PageViewItem(pageViewItemModel: e))
-                .toList(),
-      ),
+    return PageView(
+      controller: pageController,
+      children: isDarkMode
+          ? darkItems.map((e) => PageViewItem(pageViewItemModel: e)).toList()
+          : lightItems.map((e) => PageViewItem(pageViewItemModel: e)).toList(),
     );
+
+    // return GestureDetector(
+    //   onHorizontalDragUpdate: (details) {
+    //     if (details.delta.dx != 0) {
+    //       return;
+    //     }
+    //   },
+    //   child: PageView(
+    //     controller: pageController,
+    //     physics: const NeverScrollableScrollPhysics(),
+    //     children: isDarkMode
+    //         ? darkItems.map((e) => PageViewItem(pageViewItemModel: e)).toList()
+    //         : lightItems
+    //             .map((e) => PageViewItem(pageViewItemModel: e))
+    //             .toList(),
+    //   ),
+    // );
   }
 }
